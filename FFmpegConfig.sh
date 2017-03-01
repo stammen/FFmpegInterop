@@ -12,11 +12,25 @@ if [ "$1" == "Win10" ]; then
         cd Output/Windows10/x86
         ../../../configure \
         --toolchain=msvc \
-        --disable-programs \
-        --disable-d3d11va \
         --disable-dxva2 \
         --arch=x86 \
         --enable-shared \
+        --enable-postproc \
+        --enable-zlib \
+        --disable-static \
+        --disable-programs \
+        --disable-devices \
+        --disable-crystalhd \
+        --enable-muxer=spdif \
+        --enable-muxer=adts \
+        --enable-muxer=asf \
+        --enable-muxer=ipod \
+        --enable-encoder=ac3 \
+        --enable-encoder=aac \
+        --enable-encoder=wmav2 \
+        --enable-encoder=png \
+        --enable-encoder=mjpeg \
+        --enable-protocol=http \
         --enable-cross-compile \
         --target-os=win32 \
         --extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
